@@ -40,53 +40,61 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     .state('home', {
     url: '/home',
-    templateUrl: 'templates/home.html'
+    templateUrl: 'templates/home.html',
+    controller: 'DashCtrl'
+  })
+    .state('scan', {
+    url: '/scan',
+    templateUrl: 'templates/scanner.html',
+    controller: 'scanCtrl'
   })
     .state('info', {
     url: '/info',
-    templateUrl: 'templates/info.html'
+    abstract: false,
+    templateUrl: 'templates/info.html',    
+    controller: 'infoCtrl'
   })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  /*.state('info.article', {
+    url: '/article',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'info-article': {
+        templateUrl: 'templates/tab-article.html',
+        controller: 'infoCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('info.videos', {
+      url: '/videos',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'info-videos': {
+          templateUrl: 'templates/info-videos.html',
+          controller: 'videosCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('info.images', {
+      url: '/images',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'info-images': {
+          templateUrl: 'templates/chat-images.html',
+          controller: 'imagesCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('info.comments', {
+    url: '/comments',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'info-comments': {
+        templateUrl: 'templates/info-comments.html',
+        controller: 'commentsCtrl'
       }
     }
-  });
+  })*/;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');
